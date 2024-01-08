@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chord Progression Generator</title>
+    <script type="text/javascript" src="scales.js"></script>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="content" class="flex-column">
+        <div id="content-header" class="flex-column">
+            <h1>Chord Progression Generator</h1>
+            <h4>A rough chord progression generator test</h4>
+        </div>
+
+        <div id="generator" class="flex-column">
+            <div id="generator-options" class="flex-row">
+                <select name="key" id="key">
+                    <option value="c">C</option>
+                    <option value="c#">C#</option>
+                    <option value="d">D</option>
+                    <option value="d#">D#</option>
+                    <option value="e">E</option>
+                    <option value="f">F</option>
+                    <option value="f#">F#</option>
+                    <option value="g">G</option>
+                    <option value="g#">G#</option>
+                    <option value="a">A</option>
+                    <option value="a#">A#</option>
+                    <option value="Ab">Ab</option>
+                    <option value="Bb">Bb</option>
+                    <option value="Db">Db</option>
+                    <option value="Eb">Eb</option>
+                    <option value="Gb">Gb</option>
+                </select>
+                <select name="scale" id="scale">
+                    <option value="major">Major</option>
+                    <option value="minor">Minor</option>
+                </select>
+
+                <label for="7-chords">
+                    <input type="checkbox" id="7-chords" name="7-chords" value="true">
+                    7th chords?
+                </label>
+
+
+                <button onclick="generate()" id="generate">Generate</button>
+            </div>
+
+            <div id="generated-progression" class="flex-row">
+                <div class="chord-tile flex-column" id="time-signature"></div>
+                <div class="chord-tile flex-column" id="chord1"></div>
+                <div class="chord-tile flex-column" id="chord2"></div>
+                <div class="chord-tile flex-column" id="chord3"></div>
+                <div class="chord-tile flex-column" id="chord4"></div>
+            </div>
+
+            <div id="barre-chord-diagram" class="diagram flex-row">
+                <img class="flex-column" src="./barre-chords-cheatsheet.png" alt="barre chords cheatsheet diagram">
+            </div>
+
+            <div id="strumming-patterns" class="diagram flex-row">
+                <img class="flex-column" src="./strumming-patterns.png" alt="barre chords cheatsheet diagram">
+            </div>
+        </div>
+
+        <div id="spacer"></div>
+    </div>
+    <footer>
+
+        <p></b> </p>
+
+    </footer>
+
+
+</body>
+
+</html>

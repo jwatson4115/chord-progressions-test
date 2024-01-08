@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One|Noto+Sans&display=swap");
+body {
+  background-color: #0074D9;
+  color: #DDDDDD;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+#content {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 95;
+      -ms-flex: 95;
+          flex: 95;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.chord-tile {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 75px;
+  background-color: #0074D9;
+  margin: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 5px;
+  font-size: 2em;
+  font-family: 'Fjalla One', sans-serif;
+  color: #DDDDDD;
+  border: 4px solid #DDDDDD;
+}
+
+.diagram {
+  margin: 10px;
+}
+
+.diagram > img {
+  max-width: 800px;
+}
+
+@media only screen and (max-width: 600px) {
+  .chord-tile {
+    padding: 10px;
+    font-size: 1.3em;
+  }
+}
+
+h1 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 3em;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+#content-header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#generator {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  background-color: #0074D9;
+}
+
+#spacer {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+select {
+  border-radius: 5px;
+  background-color: #0074D9 !important;
+  border: 4px solid #DDDDDD;
+  margin: 5px;
+  font-size: 25px;
+  color: #DDDDDD;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  margin: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #0074D9;
+  margin: 5px;
+  border: 4px solid #DDDDDD;
+  padding: 5px;
+  font-size: 25px;
+  color: #DDDDDD;
+}
+
+footer {
+  background-color: #373737;
+  text-align: center;
+  color: #DDDDDD;
+  padding: 20px;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+footer p {
+  margin: 5px;
+}
+/*# sourceMappingURL=styles.css.map */
