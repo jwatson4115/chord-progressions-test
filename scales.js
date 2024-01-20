@@ -161,7 +161,7 @@ function generate() {
     var generatedProgression = generator(scales[key][scale]); //creating a variable that runs the function with the user input
 
     if (include7thChords) {
-        generatedProgression = add7thChords(generatedProgression);
+        generatedProgression = add7thChords(generatedProgression, scales[key][scale]);
     }
 
     // Add random time signature.
@@ -177,28 +177,41 @@ function generate() {
 }
 
 // Adds some 7th chords to a progression, including 7, maj7 
-function add7thChords(chordProgression) {
-    // Define the possible chord extensions. I've added the empty string to add no 7th sometimes.
-    const chordExtensions = ['7', 'maj7', ''];
+function add7thChords(chordProgression, keyScaleArray) {
+    console.log("chord progression: ", chordProgression);
+    console.log("keyScaleArray: ", keyScaleArray);
 
     // Iterate through each chord in the progression
     for (let i = 0; i < chordProgression.length; i++) {
-        // Randomly choose a chord extension
-        let chordExtension = chordExtensions[Math.floor(Math.random() * chordExtensions.length)];
+        chordPosition = findPosition(chordProgression[i], keyScaleArray);
 
-        // Avoid labeling minor chords as major 7 chords.
-        if (chordExtension === 'maj7' && isMinorChord(chordProgression[i])) {
-            chordExtension = '';
-        }
+        var make7thChord = Math.round(Math.random()); Math.round(Math.random());
 
-        // Check if the chord is not already a 7th chord
-        if (!/7/.test(chordProgression[i])) {
-            // Add the randomly chosen chord extension
-            chordProgression[i] += chordExtension;
+        if (make7thChord) {
+            // The I and IV chord in a major progression should have "maj7" vs "dom7".
+            if (!isMinorChord(chordProgression[0]) && (chordPosition === 1 || chordPosition === 4)) {
+                chordProgression[i] += 'maj7';
+            }
+            // ToDo: Find out if same logic applies to minor chord progressions.
+            // else if (isMinorChord(chordProgression[0]) && (chordPosition === 1 || chordPosition === 4)) {
+            //     chordProgression[i] += 'maj7';
+            // }
+            else {
+                chordProgression[i] += '7';
+            }
         }
     }
 
     return chordProgression;
+}
+
+// Find which position a string/chord is in an array/sequence.
+function findPosition(target, arr) {
+    // Use indexOf to find the position of the target string in the array
+    var position = arr.indexOf(target);
+
+    // Return the position (adding 1 to make it 1-based instead of 0-based)
+    return position + 1;
 }
 
 // Check if a chord string is a minor chord. 
